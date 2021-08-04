@@ -1,9 +1,15 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext } from "react";
 
 export const AppContext = createContext(null);
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
+  const [channels, setChannels] = useState(null);
+
+  return (
+    <AppContext.Provider value={{ channels, setChannels }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export default AppProvider;
