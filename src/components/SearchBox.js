@@ -6,7 +6,7 @@ import { themeVars } from "./GlobalStyles";
 import fetchAndSet from "../fetchAndSet";
 import { AppContext } from "./AppProvider";
 
-const SearchBox = ({}) => {
+const SearchBox = () => {
   const history = useHistory();
 
   const [searchTerm, setSearchTerm] = useState(null);
@@ -24,7 +24,7 @@ const SearchBox = ({}) => {
       url: `search/channels?query=${searchTerm}'`,
       setter: setChannels,
     });
-    // history.push("/results");
+    history.push("/results");
   };
 
   return (

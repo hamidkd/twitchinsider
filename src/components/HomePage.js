@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SearchBox from './SearchBox';
-export default function HomePage ({}) {
+export default function HomePage () {
     
     return (
     <Div>

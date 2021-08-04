@@ -1,20 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
 
 import { themeVars } from "./GlobalStyles";
 
-
 const Header = () => {
-
   return (
     <>
       <StyledHeader>
-          <Link to="/">
-            <h1 className="site-title">
-              <span>twitch</span>Insider
-            </h1>
-          </Link>
+        <Link to="/">
+          <h1 className="site-title">
+            <span>twitch</span>Insider
+          </h1>
+        </Link>
       </StyledHeader>
     </>
   );

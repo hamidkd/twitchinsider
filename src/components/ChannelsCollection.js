@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { AppContext } from "./AppProvider";
 
-export default function ChannelsCollection({}) {
+export default function ChannelsCollection() {
   const { channels } = useContext(AppContext);
 
   return (
