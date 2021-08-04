@@ -3,7 +3,7 @@ import Header from "./Header";
 import HomePage from "./HomePage";
 import ChannelsCollection from "./ChannelsCollection";
 import ChannelPage from "./ChannelPage";
-import GlobalStyles, { themeVars } from "./GlobalStyles";
+import GlobalStyles from "./GlobalStyles";
 import Styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path="/channels">
+            <Route exact path="/results">
               <ChannelsCollection />
             </Route>
             <Route exact path="/channel">
