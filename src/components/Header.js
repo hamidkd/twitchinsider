@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Styled from "styled-components";
-
+import logo from "../assets/logo.png";
 import { themeVars } from "./GlobalStyles";
 
 const Header = () => {
@@ -9,9 +9,10 @@ const Header = () => {
     <>
       <StyledHeader>
         <Link to="/">
-          <h1 className="site-title">
+          <img alt="logo" src={logo} className='logo' />
+          {/* <h1 className="site-title">
             <span>twitch</span>Insider
-          </h1>
+          </h1> */}
         </Link>
       </StyledHeader>
     </>
@@ -58,5 +59,9 @@ align-items: center;
         display: none;
       }
      }
+}
+
+.logo {
+  max-height: 60px;
 }
 `;
