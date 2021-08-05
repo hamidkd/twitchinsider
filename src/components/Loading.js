@@ -1,11 +1,12 @@
 import react from "react";
 import styled, { keyframes } from "styled-components";
 import { CgSpinner } from "react-icons/cg";
+import { themeVars } from "./GlobalStyles";
 
 const Loading = () => {
   return (
     <Div className="spinner-div">
-      <CgSpinner size="60" className="spinner" />
+      <CgSpinner size="50" className="spinner" />
     </Div>
   );
 };
@@ -29,6 +30,7 @@ const Div = styled.div`
   align-items: center;
 
   .spinner {
+    color: ${themeVars.primaryColor};
     animation: ${rotate} 1s linear infinite;
   }
 `;
