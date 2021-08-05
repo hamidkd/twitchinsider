@@ -1,23 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
-import SearchBox from './SearchBox';
-export default function HomePage () {
-    
-    return (
+import React, { useContext, useEffect } from "react";
+import styled from "styled-components";
+import { AppContext } from "./AppProvider";
+import SearchBox from "./SearchBox";
+import SearchResults from "./SearchResults";
+import Loading from "./Loading";
+
+export default function HomePage() {
+  const { channels, isLoading, setIsLoading } = useContext(AppContext);
+
+  useEffect(() => {
+    if (channels) {
+      setIsLoading(false);
+    }
+  }, [channels]);
+  return (
     <Div>
-        <SearchBox />
+      <SearchBox />
+      {isLoading && <Loading />}
+      {channels && <SearchResults />}
     </Div>
-)};
+  );
+}
 const Div = styled.div`
-height: 100%;
-margin: 1rem;
-padding: 1.5rem;
-border-radius: 1.5rem;
-background: ghostwhite;
-border: 1px solid gray;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-`
+  height: 100%;
+  background: ghostwhite;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+`;
