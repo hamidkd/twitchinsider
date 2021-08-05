@@ -1,7 +1,6 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import HomePage from "./HomePage";
-import ChannelsCollection from "./ChannelsCollection";
 import ChannelPage from "./ChannelPage";
 import GlobalStyles from "./GlobalStyles";
 import Styled from "styled-components";
@@ -18,10 +17,7 @@ function App() {
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path="/results">
-              <ChannelsCollection />
-            </Route>
-            <Route exact path="/channel">
+            <Route exact path="/channel/:id">
               <ChannelPage />
             </Route>
           </Switch>
