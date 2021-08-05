@@ -2,22 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export default function ChannelCard({ channel }) {
-  const {
-    broadcaster_login,
-    display_name,
-    game_name,
-    is_live,
-    thumbnail_url,
-    title,
-  } = channel;
+  const { id, display_name, game_name, is_live, thumbnail_url, title } =
+    channel;
 
   return (
     <Div>
-      <Link className="wrapper" to={`/channel/${broadcaster_login}`}>
+      <Link className="wrapper" to={`/channel/${id}`}>
         <img className="avatar" alt="thumbnail" src={thumbnail_url} />
         <h3>{display_name}</h3>
         <p>{title}</p>
-        <p>Game: {game_name}</p>
+        {game_name && <p>Game: {game_name}</p>}
         {is_live && <p>LiVE NOW</p>}
       </Link>
     </Div>
