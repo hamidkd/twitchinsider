@@ -7,7 +7,7 @@ import { AppContext } from "./AppProvider";
 
 const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState(null);
-  const { setChannels, setIsLoading } = useContext(AppContext);
+  const { channels, setChannels, setIsLoading } = useContext(AppContext);
 
   const handleSerachTermChange = (event) => {
     setSearchTerm(() => event.target.value);
@@ -26,35 +26,49 @@ const SearchBox = () => {
   };
 
   return (
-    <Div>
-      <div className="wrapper">
-        <FaSearch className="search-icon" />
-        <input
-          autoFocus={true}
-          className="input"
-          type="text"
-          placeholder="Search among 3 milions channels in twitch!"
-          onChange={handleSerachTermChange}
-        />
-      </div>
-      <button
-        tabIndex="0"
-        onClick={handleSerach}
-        className="search-button"
-        disabled={!searchTerm}
-        type="button"
-        autoFocus
-      >
-        Search
-      </button>
-    </Div>
+    <>
+      <Div>
+        <div className="wrapper">
+          <FaSearch className="search-icon" />
+          <input
+            autoFocus={true}
+            className="input"
+            type="text"
+            placeholder="Search among 3 milions channels in twitch!"
+            onChange={handleSerachTermChange}
+          />
+        </div>
+        {!channels ? (
+          <button
+            tabIndex="0"
+            onClick={handleSerach}
+            className="search-button"
+            disabled={!searchTerm}
+            type="button"
+            autoFocus
+          >
+            Search
+          </button>
+        ) : (
+          <button
+            className="search-button clear"
+            onClick={() => setChannels(null)}
+          >
+            Clear
+          </button>
+        )}
+      </Div>
+      </>
   );
 };
 
 export default SearchBox;
 
+
+
+  
 const Div = styled.div`
-  max-width: 60ch;
+  max-width: 70ch;
   width: 100%;
   padding-inline: 0.7rem;
   padding-inline-start: 1.5rem;
@@ -85,10 +99,11 @@ const Div = styled.div`
     padding-inline: 0.5rem;
     border: none;
     outline: none;
+    font-size: 1.1em;
   }
   .search-button {
+    font-size: 1.5em;
     flex: 0;
-    font-size: 1.1em;
     font-family: ${themeVars.contentFont};
     background-color: ${themeVars.accent2Color};
     color: ${themeVars.accent3Color};
@@ -101,7 +116,21 @@ const Div = styled.div`
       color: ${themeVars.primaryColor};
     }
     &:focus {
-      outline: 3px solid ${themeVars.accent2Color};
+      box-shadow: ${themeVars.boxShadow};
+      background-color: ${themeVars.accent3Color};
+      color: ${themeVars.primaryColor};
+      outline: none;
+    }
+  }
+  
+  .clear {
+    background-color: #f35b5b;
+    color: white;
+    &:hover, &:focus {
+      color: white;
+      box-shadow: ${themeVars.boxShadow};
+      background-color: #b31c1c;
+      outline: none;
     }
   }
 `;

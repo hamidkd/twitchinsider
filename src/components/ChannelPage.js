@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { GrGamepad } from "react-icons/gr";
+import { IoGameControllerOutline } from "react-icons/io5";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import fetchAndSet from "../fetchAndSet";
@@ -33,11 +33,11 @@ export default function ChannelPage() {
             )}
             <h2 className="name"> {channel[0].broadcaster_name}</h2>
             {channel[0].title && <p className="title">{channel[0].title}</p>}
-            <p>Language: {channel[0].broadcaster_language}</p>
+            <p className='language'>Language: {channel[0].broadcaster_language}</p>
             {channel[0].game_name && (
               <div className="games">
                 <div>
-                  <GrGamepad />
+                  <IoGameControllerOutline size="1.5rem"/>
                   <span>Games</span>
                 </div>
                 <p>{channel[0].game_name}</p>
@@ -61,11 +61,13 @@ const Div = styled.div`
   align-items: center;
 
   .wrapper {
+    max-width: 40ch;
     margin-block: 7rem;
     padding: 3rem;
     border-radius: 2rem;
-    background-color: ${themeVars.lightGrayColor};
+    background-color: ${themeVars.accentColor};
     box-shadow: ${themeVars.boxShadow};
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -74,7 +76,7 @@ const Div = styled.div`
   }
 
   .avatar {
-    border: 0.5rem solid ${themeVars.accent2Color};
+    border: 0.5rem solid ${themeVars.primaryColor};
     box-shadow: ${themeVars.boxShadow};
     border-radius: 1000px;
     max-width: 15rem;
@@ -85,12 +87,23 @@ const Div = styled.div`
     font-size: 4em;
     margin-block: 1rem;
     padding: 0;
+    color: white;
   }
 
   .title {
     font-size: 1.3em;
     color: black;
-    opacity: 0.9;
+    color: ${themeVars.primaryColor};
+  }
+
+  .language {
+    margin-top: 1rem;
+    color: lightgray;
+    border: 2px solid lightgray;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    border-radius: 0.5rem;
+
   }
 
   .games {
@@ -111,7 +124,7 @@ const Div = styled.div`
       opacity: 0.6;
     }
     p {
-      color: ${themeVars.accent2Color};
+      color: ${themeVars.primaryColor};
     }
   }
 `;
