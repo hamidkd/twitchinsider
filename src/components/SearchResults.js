@@ -16,7 +16,8 @@ export default function SearchResults() {
   );
 }
 const Div = styled.div`
-  padding-block: 3rem;
+width: 100%;
+max-width: 1400px;
   padding-inline: 1.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -23,10 +23,14 @@ export default function HomePage() {
 }
 const Div = styled.div`
   height: 100%;
+  width: 100%;
   background: ghostwhite;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
+  gap: 5rem;
+  padding-block: 5rem;
+  padding-inline: 1rem;
 `;
