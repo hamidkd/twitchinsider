@@ -8,7 +8,7 @@ const Footer = () => {
       <p>Created with ❤️ by Hamid Keshmiri</p>
       <p>
         See the source in{" "}
-        <a href="https://github.com/hamidkd/kidcademy-frontend">GitHub</a>
+        <a href="https://github.com/hamidkd/twitchinsider">GitHub</a>
       </p>
     </StyledFooter>
   );
