@@ -1,19 +1,16 @@
 require("dotenv").config();
 
 const fetchAndSet = async ({ url, setter }) => {
-  fetch("https://api.twitch.tv/helix" + url, {
+  fetch("http://localhost:8000/proxyapi" + url, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
-      "Client-id": process.env.CLIENT_ID,
-      'accept': 'application/vnd.twitchtv.v5+json'
+      Authorization: "Bearer drrnmb0fmdca9y7haqeam7cbltzywu",
+      "Client-id": "u7t2o9a71cdfrhtb4m7janstgmwymt",
     },
   })
     .then(handleNetworkErrors)
-    .then((res) => {
-        console.log(res.json().data);
-        setter(res.json().data)
-    });
+    .then((res) => res.json())
+    .then((json) => setter(json.data));
 };
 
 const handleNetworkErrors = (res) => {
