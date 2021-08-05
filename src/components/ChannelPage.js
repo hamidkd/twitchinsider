@@ -1,20 +1,39 @@
-import React from 'react';
-import styled from 'styled-components';
-export default function ChannelPage () {
-    
-    return (
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+import fetchAndSet from "../fetchAndSet";
+import Loading from "./Loading";
+
+export default function ChannelPage() {
+  const { id } = useParams();
+  const [channel, setChannel] = useState(null);
+
+  useEffect(() => {
+    const url = `/channels?broadcaster_id=${id}`;
+    fetchAndSet({ url, setter: setChannel });
+  }, [id]);
+
+  return (
     <Div>
-        'I'm a placeholder' channel!
+      {!channel ? (
+        <Loading />
+      ) : (
+        <>
+          <h2>{channel[0].broadcaster_name}</h2>
+          {channel[0].title && <p>Game: {channel[0].title}</p>}
+          <p>Language: {channel[0].broadcaster_language}</p>
+          {channel[0].game_name && <p>Game: {channel[0].game_name}</p>}
+        </>
+      )}
     </Div>
-)};
+  );
+}
 const Div = styled.div`
-padding: 1.5rem;
-border-radius: 1.5rem;
-background: ghostwhite;
-border: 1px solid gray;
-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-`
+  height: 100%;
+  padding: 1.5rem;
+  background: ghostwhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+`;
