@@ -78,6 +78,7 @@ const Div = styled.div`
   .avatar {
     border: 0.5rem solid ${themeVars.primaryColor};
     box-shadow: ${themeVars.boxShadow};
+    background-color: white;
     border-radius: 1000px;
     max-width: 15rem;
     margin-top: -7rem;
