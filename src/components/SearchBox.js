@@ -110,7 +110,7 @@ const Div = styled.div`
     font-size: 1.5em;
     flex: 0;
     font-family: ${themeVars.contentFont};
-    background-color: ${themeVars.accent2Color};
+    background-color: ${themeVars.primaryColor};
     color: ${themeVars.accent3Color};
     padding-block: 0.1rem;
     padding-inline: 1.5rem;
