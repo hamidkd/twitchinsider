@@ -1,8 +1,10 @@
 # twitchisnider 
-twitchinsider is a simple web application to search in twitch channels. It uses [Twitch APIs](https://dev.twitch.tv/docs/api/). 
+twitchinsider is a simple web application to search in twitch channels using [Twitch APIs](https://dev.twitch.tv/docs/api/). 
 
 ## Video Demo: 
 In this video I have walk you through the application an code as well:
+
+https://www.youtube.com/watch?v=Ut9i8S6A0ZE
 
 
 ## Proxy Server
