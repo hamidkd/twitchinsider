@@ -36,6 +36,7 @@ const SearchBox = () => {
             type="text"
             placeholder="Search among 3 milions channels in twitch!"
             onChange={handleSerachTermChange}
+            disabled={channels}
           />
         </div>
         {!channels ? (
@@ -100,6 +101,10 @@ const Div = styled.div`
     border: none;
     outline: none;
     font-size: 1.1em;
+    &:disabled {
+      background-color: white;
+      color: lightgray;
+    }
   }
   .search-button {
     font-size: 1.5em;

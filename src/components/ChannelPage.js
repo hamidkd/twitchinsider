@@ -51,7 +51,7 @@ export default function ChannelPage() {
 }
 const Div = styled.div`
   height: 100%;
-
+  word-break: break-all;
   padding: 1.5rem;
   padding-top: 3rem;
   background: ghostwhite;
@@ -61,7 +61,7 @@ const Div = styled.div`
   align-items: center;
 
   .wrapper {
-    max-width: 40ch;
+    max-width: 45ch;
     margin-block: 7rem;
     padding: 3rem;
     border-radius: 2rem;

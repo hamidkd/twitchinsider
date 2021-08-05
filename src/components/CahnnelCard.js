@@ -75,8 +75,10 @@ const Div = styled.div`
   }
 
   .title {
-    font-weight: 700;
+    font-size: 0.9em;
+    font-weight: 400;
     color: dimgray;
+    line-height: 1.4;
   }
 
   .games {
@@ -97,6 +99,7 @@ const Div = styled.div`
     }
     p {
       color: ${themeVars.accent2Color};
+      line-height: 1;
     }
   }
 `;
