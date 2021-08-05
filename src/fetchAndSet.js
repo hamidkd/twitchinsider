@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const fetchAndSet = async ({ url, setter }) => {
-  fetch("http://localhost:8000/proxyapi" + url, {
+  fetch("https://twitchinsider-proxyserver.herokuapp.com/proxyapi" + url, {
     method: "GET",
     headers: {
       Authorization: "Bearer drrnmb0fmdca9y7haqeam7cbltzywu",
