@@ -128,7 +128,7 @@ textarea {
 }
 
 a {
-  color: white;
+  color: inherit;
   text-decoration: none;
 }
 
