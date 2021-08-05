@@ -30,6 +30,7 @@ const SearchBox = () => {
       <div className="wrapper">
         <FaSearch className="search-icon" />
         <input
+          autoFocus={true}
           className="input"
           type="text"
           placeholder="Search among 3 milions channels in twitch!"
@@ -41,6 +42,8 @@ const SearchBox = () => {
         onClick={handleSerach}
         className="search-button"
         disabled={!searchTerm}
+        type="button"
+        autoFocus
       >
         Search
       </button>
